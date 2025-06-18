@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Profil Sayfası";
+}
+
+<div class="profile-container">
+    <h1>Profilim</h1>
+    <img src="~/images/images.png" alt="Profil Resmi" class="profile-image" />
+    <div class="profile-info">
+        <p><strong>Ad:</strong> @ViewBag.Name</p>
+        <p><strong>Soyad:</strong> @ViewBag.Surname</p>
+        <p><strong>Meslek:</strong> @ViewBag.Job</p>
+        <p><strong>Bugün:</strong> @DateTime.Now.ToLongDateString()</p>
+    </div>
+</div>
+
+<style>
+    .profile-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    .profile-info {
+        text-align: center;
+    }
+</style>

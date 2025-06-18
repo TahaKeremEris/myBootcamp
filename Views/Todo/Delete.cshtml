@@ -1,0 +1,14 @@
+@model TodoItem
+
+<h2>Silme Onayı</h2>
+
+<div class="alert alert-danger">
+    <p><strong>@Model.Title</strong> adlı öğeyi silmek üzeresiniz.</p>
+    <p>Bu işlem geri alınamaz.</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>
