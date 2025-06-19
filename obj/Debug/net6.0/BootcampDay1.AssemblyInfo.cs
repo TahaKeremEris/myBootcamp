@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BootcampDay1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ace8fcf416431b98a34de9289578aaab85fda4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BootcampDay1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BootcampDay1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

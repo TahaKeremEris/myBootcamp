@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day2\\BootcampDay1.csproj": {}
+    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day2\\BootcampDay1.csproj": {
+    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day2\\BootcampDay1.csproj",
+        "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
         "projectName": "BootcampDay1",
-        "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day2\\BootcampDay1.csproj",
+        "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
         "packagesPath": "C:\\Users\\taha.eris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day2\\obj\\",
+        "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\taha.eris\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -53,6 +61,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.10.0, )"
             }
           },
           "imports": [
