@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
+[Authorize]
 public class TodoController : Controller
 {
     private readonly AppDbContext _context;
@@ -13,11 +16,20 @@ public class TodoController : Controller
         _context = context;
     }
 
-    // Listeleme
+    // Listeleme - sadece giriş yapan kullanıcının görevleri
     public async Task<IActionResult> Index()
     {
-        var items = await _context.TodoItems.ToListAsync();
-        Console.WriteLine("Veritabanındaki toplam kayıt: " + items.Count); // Konsola yazdırır
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (_context.TodoItems == null || userId == null)
+        {
+            return View(new List<TodoItem>());
+        }
+
+        var items = await _context.TodoItems
+            .Where(t => t.UserId == userId)
+            .ToListAsync();
+
         return View(items);
     }
 
@@ -32,21 +44,36 @@ public class TodoController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(TodoItem model)
     {
-        if (ModelState.IsValid)
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (ModelState.IsValid && userId != null)
         {
             model.CreatedDate = DateTime.Now;
-            _context.TodoItems.Add(model);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            model.UserId = userId;
+
+            if (_context.TodoItems != null)
+            {
+                _context.TodoItems.Add(model);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            ModelState.AddModelError(string.Empty, "TodoItems DbSet is null.");
         }
+
         return View(model);
     }
 
     // Edit - GET
     public async Task<IActionResult> Edit(int id)
     {
-        var item = await _context.TodoItems.FindAsync(id);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        var item = await _context.TodoItems
+            .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
+
         if (item == null) return NotFound();
+
         return View(item);
     }
 
@@ -55,8 +82,19 @@ public class TodoController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(TodoItem model)
     {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        var item = await _context.TodoItems
+            .AsNoTracking()
+            .FirstOrDefaultAsync(t => t.Id == model.Id && t.UserId == userId);
+
+        if (item == null) return NotFound();
+
         if (ModelState.IsValid)
         {
+            model.UserId = userId; // Kullanıcıyı koru
+            model.CreatedDate = item.CreatedDate; // Tarihi bozma
+
             try
             {
                 _context.Update(model);
@@ -68,14 +106,20 @@ public class TodoController : Controller
                 return NotFound();
             }
         }
+
         return View(model);
     }
 
-    // Delete - GET (onay sayfası)
+    // Delete - GET
     public async Task<IActionResult> Delete(int id)
     {
-        var item = await _context.TodoItems.FindAsync(id);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        var item = await _context.TodoItems
+            .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
+
         if (item == null) return NotFound();
+
         return View(item);
     }
 
@@ -84,11 +128,16 @@ public class TodoController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var item = await _context.TodoItems.FindAsync(id);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        var item = await _context.TodoItems
+            .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
+
         if (item == null) return NotFound();
 
         _context.TodoItems.Remove(item);
         await _context.SaveChangesAsync();
+
         return RedirectToAction(nameof(Index));
     }
 }

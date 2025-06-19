@@ -1,9 +1,10 @@
-
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using BootcampDay1.Models;
 
 public class AuthService
 {
@@ -14,7 +15,7 @@ public class AuthService
         _configuration = configuration;
     }
 
-    public string GenerateJwtToken(IdentityUser user)
+    public string GenerateJwtToken(ApplicationUser user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);

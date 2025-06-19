@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
+using BootcampDay1.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,11 +23,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddScoped<AuthService>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+});
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+
+
+
+builder.Services.AddScoped<AuthService>();
+
 
 builder.Services.AddControllersWithViews();
 

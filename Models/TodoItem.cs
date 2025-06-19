@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 public class TodoItem
@@ -10,4 +11,7 @@ public class TodoItem
     public bool IsCompleted { get; set; }
 
     public DateTime CreatedDate { get; set; } = DateTime.Now;
+
+    // Kullanıcıya özel veri için eklenen alan:
+    public string? UserId { get; set; }
 }

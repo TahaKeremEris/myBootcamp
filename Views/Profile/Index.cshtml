@@ -1,40 +1,100 @@
+@model BootcampDay1.Models.ProfileViewModel
 @{
     ViewData["Title"] = "Profil Sayfası";
+    var bugun = DateTime.Now.ToString("dd MMMM yyyy dddd", new System.Globalization.CultureInfo("tr-TR"));
+    bool editMode = ViewBag.EditMode ?? false;
 }
 
-<div class="profile-container">
-    <h1>Profilim</h1>
-    <img src="~/images/images.png" alt="Profil Resmi" class="profile-image" />
-    <div class="profile-info">
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4 p-4">
+        <h2 class="text-center mb-4 text-primary">👤 Profilim</h2>
 
-        <p><strong>Kullanıcı Adı:</strong> @Model.UserName</p>
-        <p><strong>Email:</strong> @Model.Email</p>
+        <div class="text-center mb-4">
+            <img src="@(!string.IsNullOrEmpty(Model.CurrentImagePath) ? Model.CurrentImagePath : Url.Content("~/images/images.png"))"
+                 alt="Profil Resmi"
+                 class="rounded-circle"
+                 style="width: 180px; height: 180px; object-fit: cover;" />
+        </div>
 
-        <p><strong>Ad:</strong> @ViewBag.Name</p>
-        <p><strong>Soyad:</strong> @ViewBag.Surname</p>
-        <p><strong>Meslek:</strong> @ViewBag.Job</p>
-        <p><strong>Bugün:</strong> @DateTime.Now.ToLongDateString()</p>
+        @* Düzenleme modu için form veya sadece gösterim *@
+        @if (editMode)
+        {
+            <form asp-action="Index" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="editMode" value="true" />
+                
+                <div class="mb-3 text-center">
+                    <label class="form-label">Yeni Profil Fotoğrafı</label>
+                    <input type="file" name="ProfileImage" class="form-control w-50 mx-auto" />
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Kullanıcı Adı</label>
+                        <input type="text" class="form-control" name="UserName" value="@Model.UserName" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="Email" value="@Model.Email" readonly />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Ad</label>
+                        <input type="text" class="form-control" name="FirstName" value="@Model.FirstName" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Soyad</label>
+                        <input type="text" class="form-control" name="LastName" value="@Model.LastName" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Meslek</label>
+                        <input type="text" class="form-control" name="Profession" value="@Model.Profession" />
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <label class="form-label">Bugün</label>
+                    <input type="text" class="form-control" value="@bugun" readonly />
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-success">Kaydet</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary mt-2">İptal</a>
+                </div>
+
+                <div asp-validation-summary="All" class="text-danger mt-3"></div>
+
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-success mt-3" role="alert">
+                        @TempData["Message"]
+                    </div>
+                }
+            </form>
+        }
+        else
+        {
+            <div class="row g-3">
+                <div class="col-md-6"><strong>Kullanıcı Adı:</strong> @Model.UserName</div>
+                <div class="col-md-6"><strong>Email:</strong> @Model.Email</div>
+                <div class="col-md-4"><strong>Ad:</strong> @Model.FirstName</div>
+                <div class="col-md-4"><strong>Soyad:</strong> @Model.LastName</div>
+                <div class="col-md-4"><strong>Meslek:</strong> @Model.Profession</div>
+                <div class="col-md-12 mt-3">
+                    <label class="form-label">Bugün</label>
+                    <input type="text" class="form-control" value="@bugun" readonly />
+                </div>
+            </div>
+
+            <div class="d-grid mt-4">
+                <a href="@Url.Action("Index", new { editMode = "true" })" class="btn btn-primary">Profili Düzenle</a>
+            </div>
+
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success mt-3" role="alert">
+                    @TempData["Message"]
+                </div>
+            }
+        }
     </div>
 </div>
-
-<style>
-    .profile-container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto 20px;
-    }
-    .profile-info {
-        text-align: center;
-    }
-</style>

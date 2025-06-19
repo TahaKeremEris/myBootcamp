@@ -2234,11 +2234,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+      "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
       "projectName": "BootcampDay1",
-      "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+      "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
       "packagesPath": "C:\\Users\\taha.eris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\obj\\",
+      "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\taha.eris\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2322,7 +2322,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "'System.IdentityModel.Tokens.Jwt' 6.10.0 paketinde önem derecesi orta olan bilinen bir https://github.com/advisories/GHSA-59j7-ghrg-fj52 güvenlik açığı var",
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net6.0"

@@ -1,28 +1,16 @@
-
-
-
-
-
-
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using BootcampDay1.Models;
-
-
-
-
-
 
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly SignInManager<IdentityUser> _signInManager;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly AuthService _authService;
 
-    public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, AuthService authService)
+    public AuthController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, AuthService authService)
     {
         _signInManager = signInManager;
         _userManager = userManager;

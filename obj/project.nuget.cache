@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hg5Jurazdo4=",
+  "dgSpecHash": "23r3+USUqGo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+  "projectFilePath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\taha.eris\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\taha.eris\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
@@ -58,10 +58,10 @@
     {
       "code": "NU1902",
       "level": "Warning",
-      "message": "'System.IdentityModel.Tokens.Jwt' 6.10.0 paketinde önem derecesi orta olan bilinen bir https://github.com/advisories/GHSA-59j7-ghrg-fj52 güvenlik açığı var",
-      "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+      "filePath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net6.0"

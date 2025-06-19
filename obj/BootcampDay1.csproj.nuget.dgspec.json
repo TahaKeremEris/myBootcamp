@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj": {}
+    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj": {
+    "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+        "projectUniqueName": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
         "projectName": "BootcampDay1",
-        "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\BootcampDay1.csproj",
+        "projectPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\BootcampDay1.csproj",
         "packagesPath": "C:\\Users\\taha.eris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day3\\obj\\",
+        "outputPath": "C:\\Users\\taha.eris\\Desktop\\myBootcamp-Day4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\taha.eris\\AppData\\Roaming\\NuGet\\NuGet.Config"
