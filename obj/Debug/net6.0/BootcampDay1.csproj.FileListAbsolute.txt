@@ -202,6 +202,8 @@ C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\BootcampDay1.deps.js
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\BootcampDay1.runtimeconfig.json
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\BootcampDay1.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\BootcampDay1.pdb
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Humanizer.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -217,7 +219,11 @@ C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.IdentityMo
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
@@ -243,6 +249,7 @@ C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.Generat
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.AssemblyInfoInputs.cache
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.AssemblyInfo.cs
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.csproj.CoreCompileInputs.cache
+C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.RazorAssemblyInfo.cache
 C:\Users\taha.eris\Desktop\myBootcamp-Day4\obj\Debug\net6.0\BootcampDay1.RazorAssemblyInfo.cs
